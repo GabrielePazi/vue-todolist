@@ -21,7 +21,8 @@ Vue.createApp({
           text: "Chiama mamma",
           done: false
         }
-      ]
+      ],
+      newTask: ""
     }
   },
   methods: {
@@ -43,6 +44,19 @@ Vue.createApp({
       console.log(newToDoList)
 
       this.toDoList = [...newToDoList]
+      return
+    },
+    addNewTask() {
+      const newToDoItem = {
+        id: 105,
+        text: this.newTask,
+        done: false
+      }
+
+
+      this.toDoList.push(newToDoItem)
+
+      this.newTask = ""
       return
     }
   }

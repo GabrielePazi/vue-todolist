@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+.new-task-input {
+  width: 500px;
+}
+
 .list-group {
   width: 500px;
 }

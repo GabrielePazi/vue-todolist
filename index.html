@@ -13,13 +13,25 @@
 
 <body>
   <div id="app">
+
+    <!-- Input -->
+    <div class="input-container d-flex justify-content-center mt-3">
+      <div class="form-floating mb-3 new-task-input">
+        <input class="form-control" id="floatingInput" v-model="newTask" @keydown.enter="addNewTask()">
+        <label for="floatingInput">Inserisci nuovo task</label>
+      </div>
+    </div>
+
+    <!-- To Do List -->
     <div class="list-container d-flex justify-content-center mt-3">
       <ul class="list-group">
         <li v-for="(toDoItem, i) in toDoList"
           class="list-group-item d-flex justify-content-between align-items-center gap-2">
 
           <div class="flex-grow-1" v-bind:class="toDoItem.done == true ? 'text-decoration-line-through' : ''">
-            {{toDoItem.text}}</div>
+            {{toDoItem.text}}
+            {{toDoItem.id}}
+          </div>
           <button class="btn bg-primary text-white" @click="changeDoneValue(i)">Done</button>
           <button class="btn bg-danger text-white" @click="deleteToDoItem(toDoItem.id)">X</button>
         </li>
