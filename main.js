@@ -31,6 +31,19 @@ Vue.createApp({
       newToDoList[i].done = !this.toDoList[i].done
       console.log(newToDoList)
       return
+    },
+    deleteToDoItem(itemToDeleteId) {
+      const newToDoList = []
+
+      for (let i = 0; i < this.toDoList.length; i++) {
+        if (this.toDoList[i].id !== itemToDeleteId) {
+          newToDoList.push(this.toDoList[i])
+        }
+      }
+      console.log(newToDoList)
+
+      this.toDoList = [...newToDoList]
+      return
     }
   }
 }).mount('#app')
