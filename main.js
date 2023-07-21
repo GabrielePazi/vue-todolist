@@ -23,5 +23,14 @@ Vue.createApp({
         }
       ]
     }
+  },
+  methods: {
+    changeDoneValue(i) {
+      const newToDoList = [...this.toDoList]
+
+      newToDoList[i].done = !this.toDoList[i].done
+      console.log(newToDoList)
+      return
+    }
   }
 }).mount('#app')
