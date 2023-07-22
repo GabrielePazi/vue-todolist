@@ -30,7 +30,6 @@ Vue.createApp({
       const newToDoList = [...this.toDoList]
 
       newToDoList[i].done = !this.toDoList[i].done
-      console.log(newToDoList)
       return
     },
     deleteToDoItem(itemToDeleteId) {
@@ -41,18 +40,18 @@ Vue.createApp({
           newToDoList.push(this.toDoList[i])
         }
       }
-      console.log(newToDoList)
 
       this.toDoList = [...newToDoList]
       return
     },
     addNewTask() {
+      const newItemId = this.toDoList[this.toDoList.length - 1].id + 1
+
       const newToDoItem = {
-        id: 105,
+        id: newItemId,
         text: this.newTask,
         done: false
       }
-
 
       this.toDoList.push(newToDoItem)
 
