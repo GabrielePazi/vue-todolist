@@ -3,7 +3,6 @@
 Vue.createApp({
   data() {
     return {
-      startingId: 100,
       toDoList: [
         {
           id: 101,
@@ -46,11 +45,9 @@ Vue.createApp({
       return
     },
     addNewTask() {
-      let newItemId = 0;
+      let newItemId = 100;
 
-      if (this.toDoList.length == 0) {
-        newItemId = 100;
-      } else {
+      if (this.toDoList.length !== 0) {
         newItemId = this.toDoList[this.toDoList.length - 1].id + 1
       }
 
